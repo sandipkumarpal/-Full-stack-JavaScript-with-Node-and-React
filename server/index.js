@@ -4,21 +4,19 @@ const server = http.createServer();
 
 const express = require('express');
 
-// server.on('request', (req, res) => {
-//     // res.write("hello World");
-//     // setTimeout(() => {
-//     //     res.write('Still on.....');
-//     //     res.end(); 
-//     // });
-//     res.end(fs.readFileSync(__dirname + '/../client/index.html'));
-// });
-
-// server.listen(9000);
-
 const app = express();
 app.use(express.static('client'));
+app.set('view engine', 'ejs');
+
+import serverRender from './render';
+
+app.get('/', (req, res) => {
+    res.render('index', {
+        content: serverRender()
+    });
+});
 
 
-app.listen(9000);
+app.listen(9000, () => console.log('Server is Runing...'));
 
 

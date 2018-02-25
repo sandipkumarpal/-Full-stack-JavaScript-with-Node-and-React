@@ -1,6 +1,7 @@
+import React from 'react';
 const Book = () => {
     return (
-        <h2>Book Component</h2>
+        <h2>Book Component My name is sandip</h2>
     );
 }
 
