@@ -3,6 +3,11 @@ const fs = require('fs');
 const server = http.createServer();
 
 const express = require('express');
+import cors from 'cors';
+
+import apiRouter from './apiRouter';
+app.use('/api', apiRouter);
+app.user(cors());
 
 const app = express();
 app.use(express.static('client'));
