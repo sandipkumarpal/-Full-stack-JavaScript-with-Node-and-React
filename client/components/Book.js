@@ -1,7 +1,12 @@
 import React from 'react';
-const Book = () => {
+const Book = (props) => {
     return (
-        <h2>Book Component My name is sandip</h2>
+        <div>
+            <div>{props.userId}</div>
+            <div>{props.id}</div>
+            <div>{props.title}</div>
+            <div>{props.completed}</div>
+        </div>
     );
 }
 

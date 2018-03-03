@@ -1,10 +1,10 @@
 import React from 'react';
 import Book from './Book';
 
-const BookList = () => {
+const BookList = (props) => {
     return (
         <div>
-            <Book />
+            {props.books.map(book => <Book key={book.id} {...book} />)}
         </div>
     );
 }
